@@ -5,7 +5,8 @@
   "main": "server.js",
   "engines": {
     "node": "v12.18.3",
-    "npm": "7.15.1"
+    "npm": "7.15.1",
+    "yarn": "1.22.10"
   },
   "scripts": {
     "frontend": "cd client && yarn start",
