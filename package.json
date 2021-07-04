@@ -8,11 +8,11 @@
     "npm": "7.15.1"
   },
   "scripts": {
-    "frontend": "cd frontend && yarn start",
+    "frontend": "cd client && yarn start",
     "server": "nodemon server.js",
-    "build": "cd frontend && yarn && yarn run build",
-    "dev": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run frontend\"",
-    "heroku-postbuild": "cd frontend && yarn && yarn --only=dev --no-shrinkwrap && yarn run build"
+    "build": "cd client && yarn && yarn run build",
+    "dev": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
+    "heroku-postbuild": "cd client && yarn && yarn --only=dev --no-shrinkwrap && yarn run build"
   },
   "keywords": [],
   "author": "",
