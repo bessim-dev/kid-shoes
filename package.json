@@ -12,7 +12,7 @@
     "server": "nodemon server.js",
     "build": "cd frontend && yarn && yarn run build",
     "dev": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run frontend\"",
-    "heroku-postbuild": "cd frontend && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "cd frontend && yarn && yarn --only=dev --no-shrinkwrap && yarn run build"
   },
   "keywords": [],
   "author": "",
