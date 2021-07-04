@@ -10,7 +10,7 @@
   "scripts": {
     "frontend": "cd frontend && yarn start",
     "server": "nodemon server.js",
-    "build": "cd frontend && yarn run build",
+    "build": "cd frontend && yarn && yarn run build",
     "dev": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run frontend\""
   },
   "keywords": [],
