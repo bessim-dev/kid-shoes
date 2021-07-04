@@ -1,11 +1,13 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 const app = express();
-
 const port = process.env.PORT || 5000;
+app.use(cors());
+app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "frontend/build")));
@@ -13,9 +15,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "frontend/build", "index.html"));
   });
 }
-
-app.use(cors());
-app.use(express.json());
 
 const transporter = nodemailer.createTransport({
   host: process.env.EMAILSERVICEHOST,
