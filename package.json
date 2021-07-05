@@ -9,11 +9,12 @@
     "yarn": "1.22.10"
   },
   "scripts": {
+    "start": "node server.js",
     "frontend": "cd client && yarn start",
     "server": "nodemon server.js",
     "build": "cd client && yarn && yarn run build",
     "dev": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn --prefix client && yarn run build --prefix client"
+    "heroku-postbuild": "cd client && yarn --only=dev && yarn && yarn run build"
   },
   "keywords": [],
   "author": "",
